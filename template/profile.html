@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(209, 216, 214);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <img src="{{data.profile_image.url}}" alt="img"><br>
+            <p>{{data.first_name}} {{data.last_name}}</p>
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" value="{{data.first_name}}"><br><br>
+            <label for="lname">Department</label>
+            <input type="text" name="lname" value="{{data.last_name}}"><br><br>
+            <label for="dptmnt">Department</label>
+            <input type="text" name="dptmnt" value="{{data.department}}"><br><br>
+            <label for="dsg">Designation</label>
+            <input type="text" name="dsg" value="{{data.designation}}"><br><br>
+            <label for="doj">Date of Joining</label>
+            <input type="text" name="doj" value="{{data.date_of_joining|date:'Y-m-d'}}"><br><br>    
+            <label for="sal">Date of Joining</label>
+            <input type="text" name="sal" value="{{data.salary}}"><br><br>
+            <input type="file" name="profile" value="{{data.profile_image.url}}"><br><br>
+            <button type="submit">Edit</button>
+
+        </div>
+    </form>
+</body>
+</html>

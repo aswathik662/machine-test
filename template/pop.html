@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            margin: 5% 33% 0 33%;
+            box-shadow:1px 1px 10px #aaaaaa;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <br> Create new Employee <br><br><br>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="fname">First Name : </label>
+            <input type="text" name="fname" required> <br><br>
+            <label for="lname">Last Name : </label>
+            <input type="text" name="lname"><br><br>
+            <label for="dptmnt">Department : </label>
+            <input type="text" name="dptmnt" required><br><br>
+            <label for="dsg">Designation : </label>
+            <input type="text" name="dsg" required><br> <br>
+            <label for="doj">Date of Joining : </label>
+            <input type="date" name="doj" required><br><br>
+            <label for="sal">Salary : </label>
+            <input type="text" name="sal" required><br><br>
+            <label for="profile">Image : </label>
+            <input type="file" name="profile"><br><br>
+            <button type="submit"> Create </button><br><br>
+        </form>
+    </div>
+</body>
+</html>
